@@ -1,0 +1,59 @@
+
+.image-scroll-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Два столбца */
+  gap: 20px; /* Расстояние между изображениями */
+  padding: 30px; /* Отступы внутри контейнера */
+  max-height: 200vh; /* Ограничиваем высоту контейнера */
+  padding-top: 250px;
+}
+
+.image-item {
+  width: 100%; /* Полная ширина ячейки */
+  aspect-ratio: 1 / 1; /* Квадратные пропорции */
+  max-width: 600px; /* Максимальная ширина изображения */
+  margin: 0 auto; /* Центрируем изображение в ячейке */
+  border-radius: 8px; /* Закругление углов */
+  overflow: hidden; /* Обрезаем изображение, если оно выходит за границы */
+  cursor: pointer; /* Показываем курсор "рука" при наведении */
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Сохраняем пропорции изображения */
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none; /* По умолчанию скрыто */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Темный фон */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex; /* Показываем модальное окно */
+}
+
+.modal img {
+  max-width: 90%; /* Ограничение ширины */
+  max-height: 90%; /* Ограничение высоты */
+  object-fit: contain; /* Сохраняем пропорции */
+  border-radius: 8px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
